@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parth's Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <link rel="stylesheet" type="text/css" href="timeline.css" />
+  </head>
+  <body class="w3-black">
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <!-- Avatar image in top left corner -->
+      <img src="Parth.JPG" style="width: 100%" />
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </a>
+      <a
+        href="#about"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-black"
+      >
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+      </a>
+      <!-- <a
+        href="#photos"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-black"
+      >
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>VIDEOS</p>
+      </a> -->
+      <a
+        href="#contact"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-black"
+      >
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+      </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+      <div
+        class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small"
+      >
+        <a href="#" class="w3-bar-item w3-button" style="width: 25% !important"
+          >HOME</a
+        >
+        <a
+          href="#about"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >ABOUT</a
+        >
+        <a
+          href="#photos"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >PHOTOS</a
+        >
+        <a
+          href="#contact"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >CONTACT</a
+        >
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+      <!-- Header/Home -->
+      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <h1 class="w3-jumbo">
+          <span class="w3-hide-small">I'm</span> Parth Tawde.
+        </h1>
+        <p>Master's Student Looking for Software Roles</p>
+        <img
+          src="Parth.JPG"
+          alt="boy"
+          class="w3-image"
+          width="500"
+          height="400"
+        />
+      </header>
+
+      <!-- About Section -->
+      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">Parth Tawde</h2>
+        <hr style="width: 200px" class="w3-opacity" />
+        <p>
+          Hello this is <strong>Parth Tawde</strong>. <br /><br />
+          I recently earned a Master’s in Computer Science from the University
+          of Illinois at Chicago. I specialize in full-stack web development
+          with the MERN stack, MVC framework, and system design. My academic
+          work and internships have strengthened my skills in program design,
+          communication, and teamwork.<br /><br />
+          One standout project is a video streaming website with multilingual
+          translation, developed using React, Node.js, Express.js, and Google
+          Cloud APIs. I am eager to join a dynamic team and contribute to
+          innovative projects. Feel free to reach out to discuss opportunities!
+        </p>
+        <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+        <p>
+          <strong>Language/ Framework:</strong> JavaScript, C, C++, C#,
+          Java/JavaFX, Python, React, Node.js, Express.js, SQL, Matplotlib,
+          Kotlin, F#, Pandas<br /><br />
+          <strong>Technologies/ Tools:</strong> Linux, Kubernetes, Microsoft
+          Teams, VS Code, Eclipse, Maven, Jupyter Notebook, Git, GitHub, Android
+          Studio
+        </p>
+        <br />
+        <form method="get" action="Parth Tawde Resume.docx.pdf" target="_blank">
+          <button
+            class="w3-button w3-light-grey w3-padding-large w3-section"
+            type="submit"
+          >
+            Download Resume
+          </button>
+        </form>
+
+        <!-- Projects Timeline -->
+        <h3 class="w3-padding-24 w3-text-light-grey">My Projects</h3>
+        <ul>
+          <li style="--accent-color: #41516c">
+            <div class="date">February - March 2024</div>
+            <div class="title">Memories Project</div>
+            <div class="descr">
+              Led creation of a social media platform with the MERN stack,
+              employing MVC principles and Firebase for JWT authentication,
+              implementing Node.js and Express.js for backend features, and
+              emphasizing React and Redux for dynamic user experience and
+              real-time interactivity, all underpinned by REST API architecture
+              and robust state management.
+            </div>
+          </li>
+          <li style="--accent-color: #fbca3e">
+            <div class="date">August - December 2023</div>
+            <div class="title">Language Omegle</div>
+            <div class="descr">
+              Developed a video calling app with React and Express, integrating
+              Twilio for communication, implementing Azure APIs for real-time
+              multilingual translation, optimizing back-end scalability in
+              JavaScript, and enhancing front-end to back-end connectivity with
+              Socket.IO.
+            </div>
+            <br />
+            <div class="title">
+              311 Services Requests - Visualizations and Visual Analytics
+            </div>
+            <div class="descr">
+              Architected a web-based data visualization system with JavaScript
+              and Vega-Lite, creating almost 30 visualizations and integrating
+              interactive techniques for enhanced data insights
+            </div>
+          </li>
+          <li style="--accent-color: #e24a68">
+            <div class="date">January 2023 - April 2023</div>
+            <div class="title">App Review Analyzer</div>
+            <div class="descr">
+              Collaborated in a team of five to scrape and transform 30,000
+              Facebook app reviews from Google Play Store, conducting sentiment
+              analysis and Latent Dirichlet Allocation topic modeling to
+              identify 5 key review themes. Enhanced review quality by
+              validating valuable reviews (thumbs-up count) and addressing
+              non-informative content.
+            </div>
+          </li>
+          <li style="--accent-color: #1b5f8c">
+            <div class="date">January 2021 - February 2021</div>
+            <div class="title">Connect 4</div>
+            <div class="descr">
+              Developed front-end and back-end code for a multi-threaded,
+              real-time Connect 4 multiplayer game, demonstrating robust
+              problem-solving and critical thinking. Prepared a UML class
+              diagram to design the basic architecture and rigorously tested the
+              application using JUnit 5 automated tests, collaborating remotely
+              to ensure smooth gameplay and functionality.
+            </div>
+          </li>
+          <!-- <li style="--accent-color:#4CADAD">
+          <div class="date">2022</div>
+          <div class="title">Title 5</div>
+          <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
+      </li> -->
+        </ul>
+        <!-- End Portfolio Section -->
+        <!-- </div> -->
+        <!-- End About Section -->
+      </div>
+
+      <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contact Me</h2>
+        <hr style="width: 200px" class="w3-opacity" />
+
+        <div class="w3-section">
+          <p>
+            <i
+              class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"
+            ></i>
+            Chicago, US
+          </p>
+          <p>
+            <i
+              class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"
+            ></i>
+            Phone: (312)-721-4505
+          </p>
+          <p>
+            <i
+              class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"
+            ></i>
+            Email: parthtawde79@gmail.com
+          </p>
+        </div>
+        <br />
+        <p>Let's get in touch. Send me a message:</p>
+
+        <form
+          action="mailto:parthtawde79@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <p>
+            <input
+              class="w3-input w3-padding-16 w3-border"
+              type="text"
+              placeholder="Name"
+              required
+              name="Name"
+            />
+          </p>
+          <p>
+            <input
+              class="w3-input w3-padding-16 w3-border"
+              type="text"
+              placeholder="Email"
+              required
+              name="Email"
+            />
+          </p>
+          <p>
+            <input
+              class="w3-input w3-padding-16 w3-border"
+              type="text"
+              placeholder="Subject"
+              required
+              name="Subject"
+            />
+          </p>
+          <p>
+            <input
+              class="w3-input w3-padding-16 w3-border"
+              type="text"
+              placeholder="Message"
+              required
+              name="Message"
+            />
+          </p>
+          <p>
+            <button
+              class="w3-button w3-light-grey w3-padding-large"
+              type="submit"
+            >
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+        <a
+          href="https://www.linkedin.com/in/parth-tawde/"
+          class="w3-hover-opacity"
+          target="_blank"
+        >
+          <i class="fa fa-linkedin"></i>
+        </a>
+        &nbsp&nbsp
+        <a
+          href="https://www.instagram.com/parthutawde/"
+          class="w3-hover-opacity"
+          target="_blank"
+        >
+          <i class="fa fa-instagram"></i>
+        </a>
+        &nbsp&nbsp
+        <a
+          href="https://github.com/Parth-09/"
+          class="w3-hover-opacity"
+          target="_blank"
+        >
+          <i class="fa fa-github"></i>
+        </a>
+      </footer>
+
+      <!-- END PAGE CONTENT -->
+    </div>
+  </body>
+</html>
