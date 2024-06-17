@@ -9,12 +9,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    /> -->
     <link rel="stylesheet" type="text/css" href="home.css" />
     <link rel="stylesheet" type="text/css" href="timeline.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="w3-black">
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
@@ -32,24 +34,22 @@
         <i class="fa fa-user w3-xxlarge"></i>
         <p>ABOUT</p>
       </a>
-      <!-- <a
-        href="#photos"
-        class="w3-bar-item w3-button w3-padding-large w3-hover-black"
-      >
-        <i class="fa fa-eye w3-xxlarge"></i>
-        <p>VIDEOS</p>
-      </a> -->
+      <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fas fa-folder-open w3-xxlarge"></i>
+        <p>PROJECTS</p>
+      </a>
       <a
         href="#contact"
         class="w3-bar-item w3-button w3-padding-large w3-hover-black"
       >
         <i class="fa fa-envelope w3-xxlarge"></i>
+        
         <p>CONTACT</p>
       </a>
     </nav>
 
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
-    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <!-- <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
       <div
         class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small"
       >
@@ -75,7 +75,7 @@
           >CONTACT</a
         >
       </div>
-    </div>
+    </div> -->
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="main">
@@ -130,6 +130,7 @@
         </form>
 
         <!-- Projects Timeline -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="projects">
         <h3 class="w3-padding-24 w3-text-light-grey">My Projects</h3>
         <ul>
           <li style="--accent-color: #41516c">
@@ -152,7 +153,8 @@
               Twilio for communication, implementing Azure APIs for real-time
               multilingual translation, optimizing back-end scalability in
               JavaScript, and enhancing front-end to back-end connectivity with
-              Socket.IO.
+              Socket.IO.<br><br>
+              <a href="https://language-omegle.onrender.com/" target="_blank" style="color: darkblue; font-weight: bold;">View Project</a>
             </div>
             <br />
             <div class="title">
@@ -161,7 +163,8 @@
             <div class="descr">
               Architected a web-based data visualization system with JavaScript
               and Vega-Lite, creating almost 30 visualizations and integrating
-              interactive techniques for enhanced data insights
+              interactive techniques for enhanced data insights<br><br>
+              <!-- <a href="https://github.com/uic-cs424/assignment-4-ferpa" target="_blank" style="color: darkblue; font-weight: bold;">View Project</a> -->
             </div>
           </li>
           <li style="--accent-color: #e24a68">
@@ -185,18 +188,11 @@
               problem-solving and critical thinking. Prepared a UML class
               diagram to design the basic architecture and rigorously tested the
               application using JUnit 5 automated tests, collaborating remotely
-              to ensure smooth gameplay and functionality.
+              to ensure smooth gameplay and functionality.<br><br>
+              <a href="https://github.com/pranavsrathod/Connect4" target="_blank" style="color: darkblue; font-weight: bold;">View Project</a>
             </div>
           </li>
-          <!-- <li style="--accent-color:#4CADAD">
-          <div class="date">2022</div>
-          <div class="title">Title 5</div>
-          <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
-      </li> -->
         </ul>
-        <!-- End Portfolio Section -->
-        <!-- </div> -->
-        <!-- End About Section -->
       </div>
 
       <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
@@ -285,7 +281,7 @@
           class="w3-hover-opacity"
           target="_blank"
         >
-          <i class="fa fa-linkedin"></i>
+          <i class="fab fa-linkedin"></i>
         </a>
         &nbsp&nbsp
         <a
@@ -293,7 +289,7 @@
           class="w3-hover-opacity"
           target="_blank"
         >
-          <i class="fa fa-instagram"></i>
+          <i class="fab fa-instagram"></i>
         </a>
         &nbsp&nbsp
         <a
@@ -301,7 +297,7 @@
           class="w3-hover-opacity"
           target="_blank"
         >
-          <i class="fa fa-github"></i>
+          <i class="fab fa-github"></i>
         </a>
       </footer>
 
