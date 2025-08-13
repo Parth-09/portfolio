@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App-wide base styles */
+@layer base {
+  html { @apply scroll-smooth; }
+  body { @apply bg-background text-text font-sans antialiased; }
+  h1, h2, h3, h4 {
+    @apply font-heading font-bold text-heading;
+  }
+  ::selection { background: #58a6ff33; }
+}
+
+/* Reusable UI patterns */
+@layer components {
+  .section { @apply py-20 md:py-28; }
+  .section-title { @apply text-3xl md:text-4xl font-bold; }
+  .section-sub { @apply text-secondary mt-2 max-w-2xl; }
+  .card { @apply rounded-2xl border border-border bg-surface/60 backdrop-blur shadow-soft; }
+  .btn { @apply inline-flex items-center gap-2 rounded-lg px-5 py-2.5 transition; }
+  .btn-primary { @apply btn bg-accent text-white hover:opacity-90; }
+  .btn-ghost { @apply btn border border-border text-text hover:bg-darkblue/40; }
+  .chip { @apply text-xs px-2.5 py-1 rounded-full border border-border text-secondary; }
+}
