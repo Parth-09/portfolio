@@ -28,7 +28,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB", "Redux", "Redis", "JWT"],
     links: {
       github: "https://github.com/Parth-09/Memories",
-      demo: "https://memories-app.onrender.com/",
+      demo: "https://memories-project-parth.netlify.app/",
     },
   },
   {
