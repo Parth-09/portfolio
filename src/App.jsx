@@ -1,3 +1,5 @@
+// src/App.jsx
+import Section from "./components/Section";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Experience from "./sections/Experience";
@@ -11,26 +13,27 @@ export default function App() {
     <div className="bg-background text-text">
       <NavBar />
 
+      {/* If you want scroll-snapping across full-height sections, keep these classes */}
       <main className="snap-y snap-mandatory">
-        <section id="hero" className="min-h-screen snap-start flex items-center">
-          <div className="container"><Hero /></div>
-        </section>
+        <Section id="hero" className="min-h-screen snap-start flex items-center">
+          <Hero />
+        </Section>
 
-        <section id="about" className="min-h-screen snap-start flex items-center">
-          <div className="container"><About /></div>
-        </section>
+        <Section id="about" className="min-h-screen snap-start flex items-center">
+          <About />
+        </Section>
 
-        <section id="experience" className="min-h-screen snap-start flex items-center">
-          <div className="container"><Experience /></div>
-        </section>
+        <Section id="experience" className="min-h-screen snap-start flex items-center">
+          <Experience />
+        </Section>
 
-        <section id="projects" className="min-h-screen snap-start flex items-center">
-          <div className="container"><Projects /></div>
-        </section>
+        <Section id="projects" className="min-h-screen snap-start flex items-center">
+          <Projects />
+        </Section>
 
-        <section id="contact" className="min-h-screen snap-start flex items-center">
-          <div className="container"><Contact /></div>
-        </section>
+        <Section id="contact" className="min-h-screen snap-start flex items-center">
+          <Contact />
+        </Section>
       </main>
 
       <Footer />
