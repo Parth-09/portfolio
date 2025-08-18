@@ -1,4 +1,3 @@
-// Projects.jsx
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink, FiTag } from "react-icons/fi";
 
@@ -11,26 +10,34 @@ const fade = (d = 0) => ({
 
 const projects = [
   {
-    title: "Memories – Social Media App (MERN)",
-    time: "Feb 2023 – Mar 2023",
-    blurb: "0→1 social app with posts, auth, and real-time updates.",
-    tags: ["React", "Node.js", "MongoDB", "Redux", "JWT"],
+    title: "Language Omegle – Video Calling App",
+    time: "Aug 2023 – Dec 2023",
+    blurb:
+      "User-friendly video calling interface with 99.9% uptime using Socket.IO for real-time communication. Integrated AI tools like Azure Speech-to-Text and Azure Translate for multilingual conversations. Built with React and Twilio API for video features.",
+    tags: ["React", "Socket.IO", "Twilio", "Azure STT", "Azure Translate"],
     links: {
-      github: "#",
-      demo: "#",
+      github: "https://github.com/jayr1867/language_omegle",
+      demo: "https://language-omegle.onrender.com/",
     },
   },
   {
-    title: "Video Calling + Live Translation",
-    time: "2023",
-    blurb: "WebRTC calling with Azure Speech-to-Text + Translate.",
-    tags: ["React", "WebRTC", "Azure STT", "Azure Translate"],
+    title: "Memories – Social Media Platform (MERN)",
+    time: "Feb 2023 – Mar 2023",
+    blurb:
+      "Full-stack social media app with MERN stack and MVC design. Created RESTful APIs, reusable React components, and optimized state with Redux. Reduced query latency by 90% via indexing, implemented secure JWT login, and used Redis for managing tokens.",
+    tags: ["React", "Node.js", "MongoDB", "Redux", "Redis", "JWT"],
     links: {
-      github: "#",
-      demo: "#",
+      github: "https://github.com/Parth-09/Memories",
+      demo: "https://memories-app.onrender.com/",
     },
   },
-  // Add more...
+  {
+    title: "The Maze Game – AI Opponent",
+    time: "Jan 2021 – Feb 2021",
+    blurb:
+      "Interactive maze game using gyroscope and swipe gestures for smooth controls. Featured an AI heuristics opponent that dynamically adapted to player behavior, boosting engagement by 30%. Led A/B testing discussions, improving retention by 25%.",
+    tags: ["Java", "AI Heuristics", "Game Dev", "UX Testing"],
+  },
 ];
 
 export default function Projects() {
@@ -85,6 +92,8 @@ export default function Projects() {
                     {p.links?.github && (
                       <a
                         href={p.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-accent hover:underline"
                       >
                         <FiGithub /> Code
@@ -93,6 +102,8 @@ export default function Projects() {
                     {p.links?.demo && (
                       <a
                         href={p.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-accent hover:underline"
                       >
                         <FiExternalLink /> Live

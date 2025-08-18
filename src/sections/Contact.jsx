@@ -11,7 +11,7 @@ const fade = (d = 0) => ({
 });
 
 export default function Contact() {
-  const email = "parth.tawde.dev@gmail.com"; // <- update if needed
+  const email = "parthtawde79@gmail.com"; // <- update if needed
   const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState({ sent: false, error: "" });
 
@@ -82,7 +82,7 @@ export default function Contact() {
               <FiGithub /> GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/parthtawde/"
+              href="https://www.linkedin.com/in/parth-tawde/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-border/60 hover:text-heading"

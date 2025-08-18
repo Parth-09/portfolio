@@ -31,7 +31,7 @@ export default function Footer() {
             <FiGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/parthtawde/"
+            href="https://www.linkedin.com/in/parth-tawde/"
             target="_blank"
             rel="noopener noreferrer"
             className="icon-btn"

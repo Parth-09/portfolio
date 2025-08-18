@@ -1,12 +1,10 @@
-// Experience.jsx
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FiServer,
   FiHeadphones,
   FiCheckSquare,
   FiUsers,
-  FiTag,
   FiChevronDown,
   FiChevronUp,
   FiGithub,
@@ -25,54 +23,58 @@ const EXPERIENCES = [
   {
     icon: <FiServer className="text-accent" size={24} />,
     role: "Software Engineering Intern",
-    company: "Trust Your Supplier",
+    company: "Trust Your Supplier, Chicago, IL",
     period: "Aug 2024 – Jun 2025",
     kpis: [
-      { label: "Query time ↓", value: "~60s → ~3s" },
+      { label: "Suppliers handled", value: "2,582" },
       { label: "APIs documented", value: "40+" },
-      { label: "Stack", value: "NestJS • MongoDB • Swagger" },
+      { label: "Delivery", value: "15% faster" },
     ],
-    tags: ["Backend", "APIs", "MongoDB", "Agile", "CI/CD"],
+    tags: ["React", "NestJS", "TypeScript", "MongoDB", "Agile", "CI/CD", "Swagger"],
     details: [
-      "Built and optimized REST APIs with NestJS and MongoDB.",
-      "Cut query latency from ~60s to ~3s via indexes and pipeline tuning.",
-      "Documented 40+ API endpoints in Swagger for cross-team clarity.",
-      "Worked in Agile sprints, improving the CI/CD pipeline.",
+      "Developed a modular React UI dashboard with buyer-specific state management and interactive data tables for 2,582 suppliers.",
+      "Designed RESTful APIs with NestJS (TypeScript) using controller-service-repository pattern for supplier ranking, CRUD, and data flows.",
+      "Contributed to Agile practices (stand-ups, sprint planning) reducing delivery timelines by 15%.",
+      "Collaborated on CI/CD pipelines, resolving merge conflicts and deploying stable builds.",
+      "Utilized JIRA for workflow management and authored 40+ Swagger-documented API endpoints.",
+      "Engineered indexing and filtering algorithms to improve ranking accuracy and reduce query latency.",
+      "Built accordion-based views for international addresses and developed Moody’s data module with conditional logic (readyForPreload flag).",
     ],
   },
   {
     icon: <FiHeadphones className="text-accent" size={24} />,
-    role: "Technical Support Specialist",
-    company: "University of Illinois Chicago",
+    role: "Technical Specialist",
+    company: "Learning Technology Solutions, Chicago, IL",
     period: "Aug 2023 – May 2024",
     kpis: [
-      { label: "Users supported", value: "100+ stakeholders" },
+      { label: "Users supported", value: "Faculty + Students" },
       { label: "Tools", value: "Blackboard • Echo360 • Panopto" },
       { label: "Tickets", value: "TeamDynamix (TDX)" },
     ],
-    tags: ["Support", "EdTech", "TDX", "Communication"],
+    tags: ["Support", "EdTech", "Java", "TDX", "Communication"],
     details: [
-      "Provided front-line support to 100+ professors and students.",
-      "Translated complex issues into clear, actionable guidance.",
-      "Managed requests in TeamDynamix (TDX) to ensure timely resolution.",
+      "Partnered with faculty to enhance courses using Blackboard, Echo360, and Panopto, integrating Java-based elements for engagement.",
+      "Provided front-line support to professors and students, translating technical concepts for non-technical audiences.",
+      "Managed service requests through TDX and ensured timely, high-quality resolutions.",
+      "Resolved course setup issues by aligning technical steps with faculty needs.",
     ],
   },
   {
     icon: <FiCheckSquare className="text-accent" size={24} />,
-    role: "Software QA Engineering Intern",
-    company: "QA Mentor",
-    period: "Jan 2023 – May 2023",
+    role: "Software Engineering Intern",
+    company: "QA Mentor, Mumbai, India",
+    period: "May 2021 – Aug 2021",
     kpis: [
-      { label: "Defect tracking", value: "JIRA" },
-      { label: "Coverage", value: "Cross-browser/platform" },
-      { label: "Quality", value: "Regression suites" },
+      { label: "Deployment time", value: "-30%" },
+      { label: "Platform", value: "CertCentral" },
+      { label: "Optimization", value: "+30% engagement" },
     ],
-    tags: ["QA", "Testing", "JIRA", "Regression"],
+    tags: ["Python", "Agile", "CI/CD", "Testing", "UI/UX", "Linear Programming"],
     details: [
-      "Created and executed manual test cases for web UI and flows.",
-      "Logged and tracked defects in JIRA; partnered with devs for fixes.",
-      "Ran regression suites to verify fixes and protect release quality.",
-      "Performed cross-browser/platform checks for consistency.",
+      "Automated CI/CD pipeline steps with Python to integrate ML models, reducing deployment time by 30%.",
+      "Participated in Agile sprints enhancing CertCentral platform with integration testing and bug fixes.",
+      "Redesigned UI templates with user-centric approach, improving navigation efficiency by 30% and engagement by 25%.",
+      "Applied optimization techniques (e.g., linear programming) to tailor products, raising engagement metrics by ~30%.",
     ],
   },
   {
@@ -83,28 +85,19 @@ const EXPERIENCES = [
     kpis: [
       { label: "Families guided", value: "1,000+" },
       { label: "Events", value: "Tours • Presentations • Q&A" },
-      { label: "Focus", value: "Communication" },
+      { label: "Focus", value: "Leadership & Communication" },
     ],
     tags: ["Leadership", "Communication", "Student Success"],
     details: [
-      "Welcomed and guided 1,000+ incoming students and families.",
-      "Facilitated campus tours, presentations, and Q&A sessions.",
-      "Coordinated with staff to resolve concerns and share resources.",
+      "Welcomed and guided 1,000+ incoming students and families through orientation programs.",
+      "Facilitated tours, presentations, and Q&A sessions to ease student transitions.",
+      "Collaborated with staff to organize events, resolve concerns, and ensure student success.",
     ],
   },
 ];
 
-// Collect unique tags for filtering
-const ALL_TAGS = ["All", ...Array.from(new Set(EXPERIENCES.flatMap(e => e.tags)))];
-
 export default function Experience() {
-  const [activeTag, setActiveTag] = useState("All");
-  const [openIndex, setOpenIndex] = useState(0); // first item open by default
-
-  const filtered = useMemo(() => {
-    if (activeTag === "All") return EXPERIENCES;
-    return EXPERIENCES.filter(exp => exp.tags.includes(activeTag));
-  }, [activeTag]);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <section className="py-12 md:py-20">
@@ -115,36 +108,7 @@ export default function Experience() {
         Experience
       </motion.h2>
 
-      {/* Tag Filters */}
-      <motion.div
-        {...fade(0.05)}
-        className="mb-10 flex flex-wrap gap-2"
-        role="tablist"
-        aria-label="Filter experience by tag"
-      >
-        {ALL_TAGS.map(tag => (
-          <button
-            key={tag}
-            role="tab"
-            aria-selected={activeTag === tag}
-            onClick={() => setActiveTag(tag)}
-            className={[
-              "px-3 py-1.5 rounded-full border text-sm",
-              activeTag === tag
-                ? "border-accent text-accent"
-                : "border-border/60 text-secondary hover:text-heading",
-            ].join(" ")}
-          >
-            <span className="inline-flex items-center gap-2">
-              <FiTag className="opacity-80" /> {tag}
-            </span>
-          </button>
-        ))}
-      </motion.div>
-
-      {/* Vertical Timeline */}
       <div className="relative">
-        {/* Vertical rail */}
         <div
           aria-hidden="true"
           className="absolute left-5 md:left-7 top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 to-transparent"
@@ -152,7 +116,7 @@ export default function Experience() {
 
         <ul className="space-y-8">
           <AnimatePresence initial={false} mode="popLayout">
-            {filtered.map((exp, i) => {
+            {EXPERIENCES.map((exp, i) => {
               const isOpen = openIndex === i;
               return (
                 <motion.li
@@ -161,7 +125,6 @@ export default function Experience() {
                   layout
                   className="relative pl-14 md:pl-20"
                 >
-                  {/* Timeline node */}
                   <span
                     aria-hidden="true"
                     className="absolute left-3 md:left-5 mt-2 h-7 w-7 rounded-full border-2 border-accent bg-white flex items-center justify-center shadow-sm"
@@ -189,7 +152,6 @@ export default function Experience() {
                       </p>
                     </header>
 
-                    {/* KPI badges */}
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.kpis.map(k => (
                         <span
@@ -203,22 +165,17 @@ export default function Experience() {
                       ))}
                     </div>
 
-                    {/* Tags */}
                     <div className="mt-3 flex flex-wrap items-center gap-2">
                       {exp.tags.map(t => (
-                        <button
+                        <span
                           key={t}
-                          onClick={() => setActiveTag(t)}
-                          className="px-2.5 py-1 text-xs rounded-full border border-border/60 text-secondary hover:text-heading"
-                          aria-label={`Filter by ${t}`}
-                          title={`Filter by ${t}`}
+                          className="px-2.5 py-1 text-xs rounded-full border border-border/60 text-secondary"
                         >
                           {t}
-                        </button>
+                        </span>
                       ))}
                     </div>
 
-                    {/* Expand / collapse */}
                     <motion.button
                       onClick={() => setOpenIndex(isOpen ? -1 : i)}
                       className="mt-4 inline-flex items-center gap-2 text-accent underline-offset-4 hover:underline"
@@ -261,26 +218,6 @@ export default function Experience() {
           </AnimatePresence>
         </ul>
       </div>
-
-      {/* Optional: portfolio CTA row (code samples / resume) */}
-      <motion.div {...fade(0.1)} className="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/resume.pdf"
-          className="btn btn-primary"
-          aria-label="Download resume PDF"
-        >
-          Download Resume
-        </a>
-        <a
-          href="https://github.com/Parth-09"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 underline-offset-4 hover:underline text-accent"
-          aria-label="View GitHub profile"
-        >
-          <FiGithub /> GitHub
-        </a>
-      </motion.div>
     </section>
   );
 }

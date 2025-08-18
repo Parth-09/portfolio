@@ -73,7 +73,7 @@ export default function About() {
       {/* Stats */}
       <motion.div {...fade(0.25)} className="mt-14 grid gap-6 sm:grid-cols-3">
         <Stat label="Years Coding" value="5+" />
-        <Stat label="Projects Delivered" value="12+" />
+        <Stat label="Projects Delivered" value="4+" />
         <Stat label="APIs Built" value="40+" />
       </motion.div>
 

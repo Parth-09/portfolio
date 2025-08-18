@@ -11,7 +11,7 @@ export default function App() {
     <div className="bg-background text-text">
       <NavBar />
 
-      <main className="h-screen overflow-y-auto snap-y snap-mandatory">
+      <main className="snap-y snap-mandatory">
         <section id="hero" className="min-h-screen snap-start flex items-center">
           <div className="container"><Hero /></div>
         </section>
