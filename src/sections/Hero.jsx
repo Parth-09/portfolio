@@ -49,26 +49,16 @@ export default function Hero() {
             View Projects
           </a>
 
-        <div className="flex gap-3">
-          {/* View in new tab (good sanity check) */}
+          {/* PDF is in public/ */}
           <a
             href={`${base}assets/Parth_Tawde_Resume.docx.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn"
-          >
-            View Resume
-          </a>
-
-          {/* Force download */}
-          <a
-            href={`${base}assets/Parth_Tawde_Resume.docx.pdf`}
             download="Parth_Tawde_Resume.pdf"
-            className="btn"
+            className="inline-flex items-center gap-2 rounded-lg px-7 py-3 border border-border text-lg font-medium text-text hover:bg-darkblue/40 transition"
           >
-            Download Resume
+            Download Résumé
           </a>
-        </div>
         </motion.div>
       </div>
 
