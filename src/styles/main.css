@@ -42,3 +42,44 @@
   .btn-outline { @apply btn border border-border text-text hover:shadow-md; }
   .chip { @apply text-xs px-2.5 py-1 rounded-full border border-border text-secondary; }
 }
+
+/* ---------- Responsive polish layer ---------- */
+
+/* Respect notches/safe areas + comfy page padding */
+@layer base {
+  body { padding-left: max(0px, env(safe-area-inset-left));
+         padding-right: max(0px, env(safe-area-inset-right)); }
+}
+
+/* Fluid section rhythm (use .section on wrappers) */
+@layer components {
+  .section { @apply py-16 md:py-24; }
+}
+
+/* Reusable input style (used in Contact.jsx) */
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-border/60 bg-surface/70 px-4 py-3
+           text-base leading-6 outline-none
+           focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:border-accent/70;
+  }
+}
+
+/* Helpful utilities */
+@layer utilities {
+  /* Mobile viewport height that doesn’t jump on iOS */
+  .min-h-svh { min-height: 100svh; }
+
+    /* Prevent sticky header overlap when scrolling to sections */
+  section { scroll-margin-top: 72px; } /* or the exact navbar height */
+
+
+  /* Prevent long strings from breaking layouts */
+  .break-anywhere { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* Prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-safe-only { animation: none !important; transition: none !important; }
+  }
+}
+

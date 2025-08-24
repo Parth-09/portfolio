@@ -3,7 +3,10 @@ import { FiArrowUp, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 export default function Footer() {
   const toTop = () => {
     const el = document.getElementById("hero");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      const prefersReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; 
+      el.scrollIntoView({ behavior: prefersReduce ? "auto" : "smooth", block: "start" });
+    } 
   };
 
   return (
@@ -41,6 +44,7 @@ export default function Footer() {
           </a>
 
           <button
+            type="button"
             onClick={toTop}
             className="ml-2 inline-flex items-center gap-2 px-3 py-1.5 rounded border border-border/60 hover:text-heading"
             aria-label="Back to top"

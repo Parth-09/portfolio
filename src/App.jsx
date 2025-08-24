@@ -15,23 +15,23 @@ export default function App() {
 
       {/* If you want scroll-snapping across full-height sections, keep these classes */}
       <main className="snap-y snap-mandatory">
-        <Section id="hero" className="min-h-screen snap-start flex items-center">
+        <Section id="hero" className="min-h-svh snap-start flex items-center">          
           <Hero />
         </Section>
 
-        <Section id="about" className="min-h-screen snap-start flex items-center">
+        <Section id="about" className="min-h-svh snap-start flex items-center">
           <About />
         </Section>
 
-        <Section id="experience" className="min-h-screen snap-start flex items-center">
+        <Section id="experience" className="min-h-svh snap-start flex items-center">
           <Experience />
         </Section>
 
-        <Section id="projects" className="min-h-screen snap-start flex items-center">
+        <Section id="projects" className="min-h-svh snap-start flex items-center">
           <Projects />
         </Section>
 
-        <Section id="contact" className="min-h-screen snap-start flex items-center">
+        <Section id="contact" className="min-h-svh snap-start flex items-center">
           <Contact />
         </Section>
       </main>

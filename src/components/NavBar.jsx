@@ -59,7 +59,8 @@ export default function NavBar() {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const prefersReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: prefersReduce ? "auto" : "smooth", block: "start" });
     setOpen(false);
   };
 
@@ -94,6 +95,7 @@ export default function NavBar() {
         >
           {/* Brand */}
           <button
+            type="button"
             onClick={() => scrollTo("hero")}
             className="text-heading font-semibold text-base md:text-lg"
             aria-label="Go to home"
@@ -106,6 +108,7 @@ export default function NavBar() {
             {SECTIONS.map((s) => (
               <li key={s.id}>
                 <button
+                  type="button"
                   onClick={() => scrollTo(s.id)}
                   className={navItemClass(s.id)}
                   aria-current={active === s.id ? "page" : undefined}
@@ -150,8 +153,9 @@ export default function NavBar() {
 
           {/* Mobile toggle */}
           <button
+            type="button"
             onClick={() => setOpen((o) => !o)}
-            className="md:hidden p-2 rounded-full hover:bg-border/40"
+            className="md:hidden p-3 rounded-full hover:bg-border/40"
             aria-label="Toggle menu"
             aria-expanded={open}
           >
@@ -166,6 +170,7 @@ export default function NavBar() {
               {SECTIONS.map((s) => (
                 <li key={s.id}>
                   <button
+                    type="button"
                     onClick={() => scrollTo(s.id)}
                     className={[
                       "w-full text-left px-4 py-3 text-base",
@@ -194,7 +199,7 @@ export default function NavBar() {
                   <FiGithub />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/parthtawde/"
+                  href="https://www.linkedin.com/in/parth-tawde/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-btn"

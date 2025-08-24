@@ -10,7 +10,7 @@ export default function Hero() {
   const base = import.meta.env.BASE_URL || "/";
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-10">
+    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
       {/* Left side - Text */}
       <div className="flex-1">
         <motion.p
@@ -22,7 +22,7 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(0.1)}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight break-anywhere"
         >
           Hi, I’m{" "}
           <span className="whitespace-nowrap bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -49,16 +49,26 @@ export default function Hero() {
             View Projects
           </a>
 
-          {/* PDF is in public/ */}
+        <div className="flex gap-3">
+          {/* View in new tab (good sanity check) */}
           <a
             href={`${base}assets/Parth_Tawde_Resume.docx.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            download="Parth_Tawde_Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-lg px-7 py-3 border border-border text-lg font-medium text-text hover:bg-darkblue/40 transition"
+            className="btn"
           >
-            Download Résumé
+            View Resume
           </a>
+
+          {/* Force download */}
+          <a
+            href={`${base}assets/Parth_Tawde_Resume.docx.pdf`}
+            download="Parth_Tawde_Resume.pdf"
+            className="btn"
+          >
+            Download Resume
+          </a>
+        </div>
         </motion.div>
       </div>
 
@@ -67,8 +77,8 @@ export default function Hero() {
         <img
           src={`${base}assets/profile.jpg`}
           alt="Parth Tawde profile picture"
-          className="w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-2xl shadow-lg object-cover"
-          loading="eager"
+          className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-2xl shadow-lg object-cover" 
+          loading="lazy"
         />
       </motion.div>
     </div>

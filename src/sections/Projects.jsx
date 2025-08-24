@@ -52,25 +52,26 @@ export default function Projects() {
 
       <div className="relative max-w-6xl mx-auto">
         {/* Center vertical line */}
-        <div
-          aria-hidden="true"
-          className="absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-accent/60 to-transparent transform -translate-x-1/2"
-        />
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-accent/60 to-transparent -translate-x-1/2"
+      />
 
-        <div className="space-y-16">
+        <div className="space-y-10 md:space-y-16">
           {projects.map((p, i) => {
             const isLeft = i % 2 === 0;
             return (
               <div
                 key={p.title}
-                className={`flex items-center justify-between w-full ${
-                  isLeft ? "flex-row" : "flex-row-reverse"
-                }`}
+                className={`
+                  grid grid-cols-1 md:grid-cols-2 items-start gap-6
+                  ${isLeft ? "" : "md:[&>*:first-child]:order-2"}
+                `}
               >
                 {/* Project card */}
                 <motion.div
                   {...fade(i * 0.05)}
-                  className="relative w-full md:w-[45%] card p-6 md:p-8"
+                  className="relative card p-6 md:p-8"
                 >
                   <h3 className="text-2xl font-semibold">{p.title}</h3>
                   <time className="text-sm text-secondary">{p.time}</time>
@@ -113,9 +114,9 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Connector dot */}
-                <div className="hidden md:flex items-center justify-center w-6 h-6 rounded-full border-2 border-accent bg-white z-10 relative" />
-                {/* Empty space for alignment */}
-                <div className="w-full md:w-[45%]" />
+                <div className="hidden md:flex items-center justify-center">
+                  <div className="w-4 h-4 rounded-full border-2 border-accent bg-white z-10 relative md:mx-auto" />
+                </div>
               </div>
             );
           })}
