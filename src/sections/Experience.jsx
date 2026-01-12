@@ -23,7 +23,7 @@ const EXPERIENCES = [
   {
     icon: <FiServer className="text-accent" size={24} />,
     role: "AI Software Engineer",
-    company: "Nachway, Remote",
+    company: "Nachway, Chicago, IL",
     period: "Jun 2025 – Oct 2025",  // Adjust dates as needed
     kpis: [
       { label: "End users served", value: "10,000+" },
