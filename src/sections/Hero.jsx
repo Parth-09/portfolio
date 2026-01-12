@@ -28,7 +28,6 @@ export default function Hero() {
           <span className="whitespace-nowrap bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Parth Tawde
           </span>
-          .
         </motion.h1>
 
 
