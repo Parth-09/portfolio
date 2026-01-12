@@ -22,6 +22,25 @@ const fade = (d = 0) => ({
 const EXPERIENCES = [
   {
     icon: <FiServer className="text-accent" size={24} />,
+    role: "AI Software Engineer",
+    company: "Nachway, Remote",
+    period: "Jun 2025 – Oct 2025",  // Adjust dates as needed
+    kpis: [
+      { label: "End users served", value: "10,000+" },
+      { label: "Latency reduction", value: "40%" },
+      { label: "Time saved weekly", value: "25+ hrs" },
+    ],
+    tags: ["React", "Node.js", "TypeScript", "Python", "OpenAI GPT-4", "LangChain", "Vector DBs", "AI Agents"],
+    details: [
+      "Developed and deployed full-stack AI applications using JavaScript/TypeScript, Node.js, React, and Python, serving 10,000+ end users with intelligent automation features.",
+      "Built scalable AI solutions integrating OpenAI GPT-4 and LangChain frameworks, reducing manual data processing workflows by 60%.",
+      "Optimized AI agent performance through systematic prompt engineering and A/B testing, analyzing metrics via monitoring dashboards to reduce response latency by 40% and improve accuracy by 15%.",
+      "Engineered custom AI agents for automating data extraction, report generation, and customer support workflows using LangChain and vector databases.",
+      "Enabled automated decision-making for business operations, saving 25+ hours per week in manual processing.",
+    ],
+  },
+  {
+    icon: <FiServer className="text-accent" size={24} />,
     role: "Software Engineering Intern",
     company: "Trust Your Supplier, Chicago, IL",
     period: "Aug 2024 – Jun 2025",
